@@ -58,20 +58,23 @@ class Config(Component):
         if abs_volt > 101.0:
             raise ValueError('Cannot set to voltage exceeding 101 V')
 
-        temp_range = Keys.RANGE1
         if abs_volt > 10.0:
             temp_range = Keys.RANGE100
         elif abs_volt > 1.0:
             temp_range = Keys.RANGE10
+        else:
+            temp_range = Keys.RANGE1
             
         current_range = self.voltage_range
-        if temp_gain != current_gain:
+        if temp_range != current_range:
             output_state = self.output
             self.output = Keys.OFF
             self.voltage_range = temp_range
+            if not self._parent.interface.operation_complete:
+                time.sleep(0.05)
             self.output = output_state
             if output_state == Keys.ON:
-                time.sleep(0.25)
+                time.sleep(0.1)
 
     def enable_output(self, state=True):
         if state:
