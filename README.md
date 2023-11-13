@@ -90,7 +90,7 @@ Use `get_command_info()` to find out the mapping dictionary information.
     >>> vs.config.get_command_info('voltage_range')
     {'command class': 'DictCommand',
      'raw remote command': 'RNGE',
-     'set_dict': {'range1': 0, 'range10': 1},
+     'set_dict': {'range1': 0, 'range10': 1, 'range100': 2},
      'get_dict': {'range1': 0, 'range10': 1, 'range100': 2},
      'index_dict': None
     }

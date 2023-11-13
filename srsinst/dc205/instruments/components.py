@@ -23,11 +23,7 @@ def round_float(number, digits=4):
 
 
 class Config(Component):
-    RangeSetDict = {
-        Keys.RANGE1: 0,
-        Keys.RANGE10: 1,
-    }
-    
+
     RangeDict = {
         Keys.RANGE1: 0,
         Keys.RANGE10: 1,
@@ -49,7 +45,7 @@ class Config(Component):
         Keys.ON: 1
     }
 
-    voltage_range = DictCommand('RNGE', RangeSetDict, RangeDict)
+    voltage_range = DictCommand('RNGE', RangeDict)
     isolation = DictCommand('ISOL', IsolationDict)
     remote_sensing = DictCommand('SENS', SensingDict)
     output = DictCommand('SOUT', OffOnDict)
@@ -128,7 +124,7 @@ class Scan(Component):
     shape = DictCommand('SCAS', ShapeDict)
     cycle = DictCommand('SCAC', CycleDict)
     display = DictCommand('SCAD', Config.OffOnDict)
-    arm_state = DictCommand('SCAA', ArmedDict)
+    arm_state = DictCommand('SCAA', ArmedDict, ArmedStatusDict)
     
     def arm(self):
         self.comm.send('SCAA 1')
