@@ -47,15 +47,16 @@ to write a Python script.
 * Import the **DC205** class from `srsinst.dc205` package.
 * Create an instance of the **DC205** and establish a remote connection.
 
+|
+
     C:\>python
     Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:37:02) [MSC v.1924 64 bit (AMD64)] on win32
     Type "help", "copyright", "credits" or "license" for more information.
-
     >>> from srsinst.dc205 import DC205
     >>> vs = DC205('serial','COM7',115200)
     >>> vs.check_id()
     ('DC205', 's/n20500476', 'ver1.80')
-    >>>
+
 
 **DC205** is comprised of multiple **Component**s,
 which provides groupings of related commands and class methods.
