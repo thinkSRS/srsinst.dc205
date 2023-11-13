@@ -50,6 +50,7 @@ to write a Python script.
     C:\>python
     Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:37:02) [MSC v.1924 64 bit (AMD64)] on win32
     Type "help", "copyright", "credits" or "license" for more information.
+
     >>> from srsinst.dc205 import DC205
     >>> vs = DC205('serial','COM7',115200)
     >>> vs.check_id()
@@ -94,7 +95,7 @@ Use `get_command_info()` to find out the mapping dictionary information.
     }
 
 The command `vs.config.voltage_range` encapsulates the raw command 'RNGE'
-explained in the [Setion 4.4.4 of the manual](https://www.thinksrs.com/downloads/pdfs/manuals/DC205.pdf#page=55).
+explained in the [Setion 4.4.4 of the manual](https://www.thinksrs.com/downloads/pdfs/manuals/DC205m.pdf#page=55).
 The token integers (0, 1, and 2) are mapped to the strings (`'range1'`, `'range10'`, and `'range100'`)
 
     >>> vs.config.voltage_range
