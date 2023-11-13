@@ -34,7 +34,7 @@ press the 'Run' button (green arrow in the toolbar) to complete the operation.
         output_state = self.cs.config.output
         self.cs.config.output = Keys.OFF
 
-        if inputs[AutoGainAdjust] == 'On':
+        if inputs[AutoRange] == 'On':
             self.cs.setting.set_voltage(inputs[OutputVoltage], True)
         else:
             self.cs.setting.set_voltage(inputs[OutputVoltage], False)
